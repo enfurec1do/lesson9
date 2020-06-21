@@ -3,14 +3,14 @@
     apt:
       name: "{{item}}"
       state: present
-    with_items: packages
+    with_items: "{{packages}}"
     when: ansible_os_family == "Debian"
   
   - name: Ensure all packages is installed
     yum:
       name: "{{item}}"
       state: present
-    with_items: packages
+    with_items: "{{packages}}"
     when: ansible_os_family == "Redhat"
 
   - name: Ensure docker-py is present

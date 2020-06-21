@@ -5,8 +5,8 @@
 
 - name: Docker registry login
   docker_login:
-    username: 
-    password: 
+    username: "{{docker_user}}"
+    password: "{{docker_pass}}"
   reauthorize: yes
 
 - name: Build and push image
