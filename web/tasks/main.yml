@@ -9,7 +9,7 @@
 - name: Run application
   docker_container:
     name: 
-    image: "{{image}}:{{tag}}"
+    image: "{{docker_user}}/{{image}}:{{tag}}"
     state: started
     pull: true
     ports:
