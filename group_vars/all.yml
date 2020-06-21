@@ -1,3 +1,4 @@
 docker_repo: ""
-docker_login: ""
+docker_user: ""
 docker_pass: ""
+email: ""
