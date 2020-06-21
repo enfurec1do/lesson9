@@ -19,4 +19,4 @@
     tag: "{{tag}}"
     push: yes
     source: build
-    force_tag: yes
+    force: yes
