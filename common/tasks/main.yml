@@ -1,2 +1,23 @@
 ---
-# tasks file for common
+  - name: Ensure all packages is installed
+    apt:
+      name: "{{item}}"
+      state: present
+    with_items: packages
+    when: ansible_os_family == "Debian"
+  
+  - name: Ensure all packages is installed
+    yum:
+      name: "{{item}}"
+      state: present
+    with_items: packages
+    when: ansible_os_family == "Redhat"
+
+  - name: Ensure docker-py is present
+    pip:
+      name: docker-py
+    
+  - name: Ensure docker service is started
+    service:
+      name: docker
+      state: started

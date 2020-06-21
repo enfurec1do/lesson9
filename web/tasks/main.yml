@@ -1,2 +1,16 @@
 ---
 # tasks file for web
+- name: Docker registry login
+  docker_login:
+    username: "{{docker_user}}"
+    password: "{{docker_pass}}"
+
+- name: Run application
+  docker_container:
+    name: 
+    image: "{{image}}:{{tag}}"
+    state: started
+    pull: true
+    force_absent: yes
+    ports:
+      - "{{host_port}}:{{app_port}}"

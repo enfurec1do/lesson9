@@ -1,0 +1,21 @@
+- name: Copy Dockerfile
+  copy:
+    src: ../files/Dockerfile
+    dest: "{{app_folder}}/Dockerfile"
+
+- name: Docker registry login
+  docker_login:
+    username: 
+    password: 
+  reauthorize: yes
+
+- name: Build and push image
+  docker_image:
+    build:
+      path: "{{app_folder}}"
+    name: myapp
+    repository: "{{docker_repo}}"
+    tag: "{{tag}}"
+    push: yes
+    source: build
+    force_tag: yes

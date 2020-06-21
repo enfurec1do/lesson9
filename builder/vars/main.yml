@@ -1,2 +1,7 @@
 ---
 # vars file for builder
+packages: [default-jdk , maven, git]
+app_repo: 'https://github.com/ewolff/user-registration-V2.git'
+app_build_command: './mvnw -pl user-registration-application -am install'
+image: "myapp"
+tag: "latest"

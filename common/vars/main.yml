@@ -1,2 +1,3 @@
 ---
 # vars file for common
+packages: [python, python-pip, docker.io]
