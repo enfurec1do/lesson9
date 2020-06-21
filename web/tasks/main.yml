@@ -12,6 +12,5 @@
     image: "{{image}}:{{tag}}"
     state: started
     pull: true
-    force_absent: yes
     ports:
       - "{{host_port}}:{{app_port}}"
