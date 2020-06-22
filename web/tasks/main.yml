@@ -8,7 +8,7 @@
 
 - name: Run application
   docker_container:
-    name: 
+    name: "{{image}}"
     image: "{{docker_user}}/{{image}}:{{tag}}"
     state: started
     pull: true
