@@ -1,0 +1,7 @@
+- name: Ensure apllication source code is latest
+  git:
+    repo: "{{app_repo}}" 
+    dest: "{{app_folder}}"
+    force: yes
+    clone: yes
+    update: yes

@@ -1,2 +1,3 @@
 ---
 # defaults file for builder
+app_folder: "/tmp/user-registration-V2"

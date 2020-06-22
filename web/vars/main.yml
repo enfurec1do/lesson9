@@ -1,2 +1,6 @@
 ---
 # vars file for web
+image: "myapp"
+tag: "latest"
+app_port: 8080
+host_port: 8080

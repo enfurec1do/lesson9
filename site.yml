@@ -1,0 +1,15 @@
+- name: Build application
+  hosts: builder
+  become: yes
+  roles:
+    - common
+    - builder
+
+
+- name: Run application
+  hosts: web
+  become: yes
+  roles:
+    - common
+    - web
+  

@@ -1,2 +1,12 @@
 ---
 # tasks file for builder
+- include: prepare_builder.yml
+
+- include: get_app.yml
+
+- name: Build application
+  shell: 
+    cmd: "{{app_build_command}}"
+    chdir: "{{app_folder}}"
+
+- include: pack_app_to_docker.yml
