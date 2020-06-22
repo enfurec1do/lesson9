@@ -9,6 +9,7 @@
     password: "{{docker_pass}}"
     email: "{{docker_email}}"
 
+# need ansible version 2.8
 # - name: Build and push image
 #   docker_image:
 #     build:
@@ -19,13 +20,6 @@
 #     push: yes
 #     source: build
 #     force: yes
-
-# fatal: [84.201.157.213]: FAILED! => {"changed": false, "msg": "Error building enfuras/myapp - code: None, message: COPY failed: stat /var/lib/docker/tmp/docker-builder153211564/user-registration-application-0.0.1-SNAPSHOT.war: no such file or directory, logs: [u'Step 1/2 : FROM tomcat:8.5-alpine', u'\\n', u' ---> 8b8b1eb786b5\\n', u'Step 2/2 : COPY user-registration-application-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/', u'\\n']"}
-
-- name: docker build
-  shell: "docker build -t {{image}}:{{tag}} ."
-  args:
-    chdir: "{{app_folder}}"
 
 - name: Build and push image
   docker_image:
