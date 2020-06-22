@@ -12,6 +12,6 @@
     image: "{{docker_user}}/{{image}}:{{tag}}"
     state: started
     pull: true
-    restart: yes
+    recreate: yes
     ports:
       - "{{host_port}}:{{app_port}}"
