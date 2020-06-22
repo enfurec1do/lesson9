@@ -9,11 +9,4 @@
     cmd: "{{app_build_command}}"
     chdir: "{{app_folder}}"
 
-- name: Copy application
-  copy:
-    src: "{{app_folder}}/user-registration-application/target/user-registration-application-0.0.1-SNAPSHOT.war"
-    dest: "{{app_folder}}"
-    remote_src: yes
-    follow: yes
-
 - include: pack_app_to_docker.yml
